@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="json-default">
+		<action name="searchAction" class="com.domain.action.AutoComplete">
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="encoding">UTF-8</param>
+				<param name="noCache">true</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="pack" extends="struts-default" namespace="/">
+		<action name="autoComplete" class="com.domain.action.AutoComp">
+			<result name="success">page2.jsp</result>
+		</action>
+	</package>
+</struts>
